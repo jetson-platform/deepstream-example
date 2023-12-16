@@ -21,13 +21,15 @@ else
 
 if [ ! libnvdsinfer_custom_impl_Yolo.so ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so $PWD
-
 else
     echo "libnvdsinfer_custom_impl_Yolo.so already exists!"
 
 if [ ! labels.txt ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/labels.txt $PWD
-    echo "done!"
 else
     echo "labels.txt already exists!"
 
+if [ ! model_b1_gpu0_fp32.engine ]; then
+    cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/model_b1_gpu0_fp32.engine $PWD
+else
+    echo "model_b1_gpu0_fp32.engine already exists!"
