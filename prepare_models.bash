@@ -11,27 +11,32 @@ cd -
 
 sudo apt-get install dos2unix
 
-if [ ! config_infer_primary_yoloV5.txt ]; then
+if [ ! -e config_infer_primary_yoloV5.txt ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/config_infer_primary_yoloV5.txt $PWD/
 else
     echo "config_infer_primary_yoloV5.txt already exists!"
+fi
 
-if [ ! yolov5s.wts ]; then
+if [ ! -e yolov5s.wts ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/yolov5s.wts $PWD/
 else
     echo "yolov5s.wts already exists!"
+fi 
 
-if [ ! libnvdsinfer_custom_impl_Yolo.so ]; then
+if [ ! -e libnvdsinfer_custom_impl_Yolo.so ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so $PWD/
 else
     echo "libnvdsinfer_custom_impl_Yolo.so already exists!"
+fi
 
-if [ ! labels.txt ]; then
+if [ ! -e labels.txt ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/labels.txt $PWD/
 else
     echo "labels.txt already exists!"
+fi
 
-if [ ! model_b1_gpu0_fp32.engine ]; then
+if [ ! -e model_b1_gpu0_fp32.engine ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/model_b1_gpu0_fp32.engine $PWD
 else
     echo "model_b1_gpu0_fp32.engine already exists!"
+fi
