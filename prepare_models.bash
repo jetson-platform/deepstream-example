@@ -21,7 +21,7 @@ else
     echo "yolov5s.wts already exists!"
 fi 
 
-if [ ! -e yolov5s.wts ]; then
+if [ ! -e yolov5s.cfg ]; then
     cp $home_dir/DeepStream-Yolo/yolov5s.cfg $PWD/
 else
     echo "yolov5s.cfg already exists!"
