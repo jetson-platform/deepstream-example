@@ -10,6 +10,17 @@ Note: However, This installation requirements should be older than yours deepstr
 bash prepare_models.bash
 ```
 
+## Edit the config_infer_primary_yoloV5.txt file
+
+```bash
+[property]
+...
+network-mode=0
+num-detected-classes=1
+interval=0
+...
+```
+
 ## create virtual environment
 
 ```bash
