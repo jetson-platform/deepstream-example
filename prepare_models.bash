@@ -21,6 +21,12 @@ else
     echo "yolov5s.wts already exists!"
 fi 
 
+if [ ! -e yolov5s.wts ]; then
+    cp $home_dir/DeepStream-Yolo/yolov5s.cfg $PWD/
+else
+    echo "yolov5s.cfg already exists!"
+fi 
+
 if [ ! -e libnvdsinfer_custom_impl_Yolo.so ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so $PWD/
 else
