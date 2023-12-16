@@ -28,7 +28,8 @@ else
 fi 
 
 if [ ! -e libnvdsinfer_custom_impl_Yolo.so ]; then
-    cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so $PWD/
+    mkdir -p nvdsinfer_custom_impl_Yolo
+    cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/libnvdsinfer_custom_impl_Yolo.so $PWD/nvdsinfer_custom_impl_Yolo
 else
     echo "libnvdsinfer_custom_impl_Yolo.so already exists!"
 fi
