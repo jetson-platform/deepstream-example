@@ -19,7 +19,7 @@ python3 -m venv venv
 ## vertual environment activate
 
 ```bash
-sourse venv/bin/activate
+source venv/bin/activate
 ```
 
 ## install requirements
