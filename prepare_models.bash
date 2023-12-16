@@ -9,6 +9,8 @@ sudo CUDA_VER=11.4 make -C nvdsinfer_custom_impl_Yolo
 
 cd -
 
+sudo apt-get install dos2unix
+
 if [ ! config_infer_primary_yoloV5.txt ]; then
     cp $home_dir/DeepStream-Yolo/nvdsinfer_custom_impl_Yolo/config_infer_primary_yoloV5.txt $PWD/
 else
