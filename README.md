@@ -10,6 +10,24 @@ Note: However, This installation requirements should be older than yours deepstr
 bash prepare_models.bash
 ```
 
+## create virtual environment
+
+```bash
+python3 -m venv venv
+```
+
+## vertual environment activate
+
+```bash
+sourse venv/bin/activate
+```
+
+## install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
 ## run custom apps
 
 ```bash
