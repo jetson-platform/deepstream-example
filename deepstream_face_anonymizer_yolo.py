@@ -320,16 +320,16 @@ def main():
 
     # added code by Javohir
     # Render the video using autovideosink
-    sink = make_elm_or_print_err("autovideosink", "videosink", "VideoSink")
+    # sink = make_elm_or_print_err("autovideosink", "videosink", "VideoSink")
 
-    # sink = make_elm_or_print_err("filesink", "filesink", "Sink")
-    # video_base_path = os.path.basename(args.input_video)
-    # output_video_path = args.out_dir + "/neuralet_deepstream_" + video_base_path
-    # if not os.path.exists(args.out_dir):
-    #     os.makedirs(args.out_dir)
-    # sink.set_property("location", output_video_path)
-    # sink.set_property("sync", 0) 
-    # sink.set_property("async", 0)
+    sink = make_elm_or_print_err("filesink", "filesink", "Sink")
+    video_base_path = os.path.basename(args.input_video)
+    output_video_path = args.out_dir + "/neuralet_deepstream_" + video_base_path
+    if not os.path.exists(args.out_dir):
+        os.makedirs(args.out_dir)
+    sink.set_property("location", output_video_path)
+    sink.set_property("sync", 0) 
+    sink.set_property("async", 0)
 
     print("Playing file %s " % args.input_video)
     streammux.set_property("width", IMAGE_WIDTH)
@@ -346,10 +346,10 @@ def main():
     pipeline.add(nvosd)
     pipeline.add(queue)
     pipeline.add(nvvidconv2)
-    # pipeline.add(capsfilter)
-    # pipeline.add(encoder)
-    # pipeline.add(codeparser)
-    # pipeline.add(container)
+    pipeline.add(capsfilter)
+    pipeline.add(encoder)
+    pipeline.add(codeparser)
+    pipeline.add(container)
     pipeline.add(sink)
 
     # we link the elements together
@@ -370,10 +370,10 @@ def main():
     nvvidconv.link(nvosd)
     nvosd.link(queue)
     queue.link(nvvidconv2)
-    # nvvidconv2.link(capsfilter)
-    # capsfilter.link(encoder)
-    # encoder.link(codeparser)
-    # codeparser.link(container)
+    nvvidconv2.link(capsfilter)
+    capsfilter.link(encoder)
+    encoder.link(codeparser)
+    codeparser.link(container)
     nvvidconv2.link(sink)
 
     # create an event loop and feed gstreamer bus mesages to it
